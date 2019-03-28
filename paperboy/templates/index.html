@@ -18,6 +18,7 @@
       {% for pb in paperboys %}
         <li class='paperboy'>
           <h2 class='paperboy-heading'>{{ pb.name }}</h2>
+          <h3><a href="{% url 'profile_show' id=pb.id %}" class='paperboy-heading'>Visit profile</a></h3>
           <p>{{ pb.report }}</p>
           <form class='deliver-form' action="{% url 'deliver' id=pb.id %}" method='post'>
             {% csrf_token %}
